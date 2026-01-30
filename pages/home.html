@@ -1,1 +1,70 @@
-<h1>Welcome!</h1>
+<style>
+  .wrap {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background:
+      radial-gradient(circle at top, #1a1a1a, #050505);
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+
+  p {
+    opacity: 0.7;
+    margin-bottom: 40px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    width: 80%;
+    max-width: 700px;
+  }
+
+  .card {
+    background: #111;
+    border-radius: 14px;
+    padding: 25px;
+    cursor: pointer;
+    transition: 0.2s;
+    border: 1px solid #222;
+  }
+
+  .card:hover {
+    transform: translateY(-6px);
+    background: #161616;
+    border-color: #333;
+  }
+
+  .card h2 {
+    margin: 0 0 8px;
+  }
+
+  .card span {
+    opacity: 0.6;
+    font-size: 0.9rem;
+  }
+</style>
+
+<div class="wrap">
+  <h1>Study Hub</h1>
+  <p>Select a module</p>
+
+  <div class="grid">
+    <div class="card" onclick="loadPage('gn-math')">
+      <h2>GN-Math</h2>
+      <span>Math tools & helpers</span>
+    </div>
+
+    <div class="card" onclick="loadPage('iframe')">
+      <h2>Web Viewer</h2>
+      <span>Embedded website</span>
+    </div>
+  </div>
+</div>
