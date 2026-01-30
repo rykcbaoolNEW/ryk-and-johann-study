@@ -22,6 +22,9 @@
 <script>
   const DEV_MODE = true; // set false when "done"
 
+  
+const VERSION = "v101";
+
   const VERSION = Date.now(); // visible + changing every load
 
   const BASE_DEV =
@@ -30,24 +33,15 @@
   const BASE_PROD =
     "https://cdn.jsdelivr.net/gh/rykcbaoolNEW/ryk-and-johann-study@main/pages/";
 
-  const BASE = DEV_MODE ? BASE_DEV : BASE_PROD;
-
-  function loadPage(page) {
-    fetch(BASE + page + ".html?v=" + VERSION)
-      .then(r => r.text())
-      .then(html => {
-        document.getElementById("content").innerHTML = `
-          <div style="position:fixed;bottom:6px;right:10px;
-            font-size:11px;opacity:0.4;">
-            v${VERSION}
-          </div>
-        ` + html;
-      })
-      .catch(() => {
-        document.getElementById("content").innerHTML =
-          "<h2 style='padding:20px'>Load failed</h2>";
-      });
-  }
+  const BASE =
+  "https://cdn.jsdelivr.net/gh/rykcbaoolNEW/ryk-and-johann-study@" + VERSION + "/pages/";
+function loadPage(page) {
+  fetch(BASE + page + ".html", { cache: "no-store" })
+    .then(r => r.text())
+    .then(html => {
+      document.getElementById("content").innerHTML = html;
+    });
+}
 
   window.loadPage = loadPage;
 
