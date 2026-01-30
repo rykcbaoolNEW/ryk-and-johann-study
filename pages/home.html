@@ -52,6 +52,17 @@
   }
 </style>
 
+<button onclick="
+['index.html','pages/home.html','pages/gn-math.html','pages/iframe.html','pages/doge.html']
+.forEach(f=>{
+  fetch('https://purge.jsdelivr.net/gh/rykcbaoolNEW/ryk-and-johann-study@main/' + f);
+});
+alert('jsDelivr cache purged');
+">
+Force Update
+</button>
+
+
 <div class="wrap">
   <h1>Study Hub</h1>
   <p>Select a study tool!</p>
