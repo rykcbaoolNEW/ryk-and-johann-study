@@ -2,33 +2,41 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>idk gng</title>
+  <title>Blank App</title>
   <style>
-    body {font-family: Arial, sans-serif; background:#000; color:#fff;}
-    nav {background:#111; padding:10px;}
-    nav button {margin-right:8px; padding:8px; cursor:pointer; background:#222;color:#fff;border:none;}
+    body {
+      margin: 0;
+      background: #0b0b0b;
+      color: white;
+      font-family: system-ui, sans-serif;
+    }
+    #content {
+      min-height: 100vh;
+    }
   </style>
 </head>
 <body>
-<nav>
-  <button onclick="loadPage('home')">Home</button>
-  <button onclick="loadPage('tools')">Tools</button>
-  <button onclick="loadPage('settings')">Settings</button>
-</nav>
 
 <div id="content">Loading...</div>
 
 <script>
-  const BASE = "https://cdn.jsdelivr.net/gh/rykcbaoolNEW/ryk-and-johann-study@main/pages/";
-  function loadPage(name) {
-    fetch(BASE + name + ".html?t=" + Date.now())
+  const BASE =
+    "https://cdn.jsdelivr.net/gh/rykcbaoolNEW/ryk-and-johann-study@main/pages/";
+
+  function loadPage(page) {
+    fetch(BASE + page + ".html?t=" + Date.now())
       .then(r => r.text())
-      .then(html => document.getElementById("content").innerHTML = html)
-      .catch(err => document.getElementById("content").innerHTML = "<h2>Error loading</h2>");
+      .then(html => {
+        document.getElementById("content").innerHTML = html;
+      });
   }
+
+  // expose globally so pages can call it
+  window.loadPage = loadPage;
+
+  // default page
   loadPage("home");
 </script>
 
 </body>
 </html>
-
