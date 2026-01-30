@@ -23,9 +23,7 @@
   const DEV_MODE = true; // set false when "done"
 
   
-  var VERSION = "v105";
-
-  const VERSION = Date.now(); // visible + changing every load
+  const VERSION = "v106";
 
   const BASE_DEV =
     "https://cdn.jsdelivr.net/gh/rykcbaoolNEW/ryk-and-johann-study@main/pages/";
@@ -33,7 +31,7 @@
   const BASE_PROD =
     "https://cdn.jsdelivr.net/gh/rykcbaoolNEW/ryk-and-johann-study@main/pages/";
 
-  var BASE =
+  const BASE =
   "https://cdn.jsdelivr.net/gh/rykcbaoolNEW/ryk-and-johann-study@" + VERSION + "/pages/";
 function loadPage(page) {
   fetch(BASE + page + ".html", { cache: "no-store" })
