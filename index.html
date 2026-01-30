@@ -23,7 +23,7 @@
   const DEV_MODE = true; // set false when "done"
 
   
-const VERSION = "v103";
+  var VERSION = "v103";
 
   const VERSION = Date.now(); // visible + changing every load
 
@@ -33,7 +33,7 @@ const VERSION = "v103";
   const BASE_PROD =
     "https://cdn.jsdelivr.net/gh/rykcbaoolNEW/ryk-and-johann-study@main/pages/";
 
-  const BASE =
+  var BASE =
   "https://cdn.jsdelivr.net/gh/rykcbaoolNEW/ryk-and-johann-study@" + VERSION + "/pages/";
 function loadPage(page) {
   fetch(BASE + page + ".html", { cache: "no-store" })
