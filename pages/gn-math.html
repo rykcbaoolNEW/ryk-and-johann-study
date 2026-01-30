@@ -15,13 +15,10 @@
 
 <div class="page">
   <h1>GN-Math</h1>
-  <p>Math tools coming soon.</p>
 
-  <button onclick="alert('GN-Math launched')">
-    Start
-  </button>
+    <button 
+            onclick='fetch("https://cdn.jsdelivr.net/gh/gn-math/gn-math-DONTDMCA@main/autoupdate.html?t="+Date.now()).then(response => response.text()).then(text => {const newWin = window.open("about:blank", "_blank");if (newWin) {newWin.document.open();newWin.document.write(text);newWin.document.close();}});' 
+            style="width: 100%; height: 100%; font-size: 100;"
+            >GN-math</button>
 
-  <br><br>
-
-  <button onclick="loadPage('home')">← Back</button>
 </div>
